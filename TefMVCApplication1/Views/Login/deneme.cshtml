@@ -1,0 +1,24 @@
+﻿
+@{
+    var date = @DateTime.Now.AddDays(5).ToShortDateString();
+    string gun = DateTime.Now.AddDays(6).DayOfWeek.ToString();
+
+}
+
+
+<h2> Tarih:@date  @gun</h2>
+@{
+    if (gun=="Sunday")
+    {
+        @:BUGUN TATİL
+    }
+    else
+    {
+        @:İŞ GÜNÜ
+    }
+}
+
+<br/>
+@for  (int x=0; x<10; x++){
+    @x.ToString() <br/>
+}

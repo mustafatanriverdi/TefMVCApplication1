@@ -1,0 +1,18 @@
+﻿
+
+<h2> Giriş Yapınız</h2>
+<p style="background-color:red;">@TempData["error"]</p>
+<hr/>
+
+
+
+
+
+<form method="post"  asp-controller="Login" asp-action="Index">
+    <p><input type="text" name="UserName" value="" placeholder="Username or Email" required></p>
+    <p><input type="password" name="Password" value="" placeholder="Password" required></p>
+    
+    <p class="submit"><input type="submit" name="commit" value="Giriş"></p>
+    <hr />
+    @ViewBag.Mesaj
+</form>
