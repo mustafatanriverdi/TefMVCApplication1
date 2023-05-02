@@ -1,18 +1,34 @@
-﻿
+﻿@model loginVM
 
 <h2> Giriş Yapınız</h2>
 <p style="background-color:red;">@TempData["error"]</p>
 <hr/>
 
 
+ <form asp-controller="Login" asp-action="Index" method="post" >
 
+      <div class="form-group">
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "KullaniciAdi",required="required"  })
+           @Html.ValidationMessageFor(model => model.UserName)
+       </div>
 
+    <div class="form-group">
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Şifre",required="required"  })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
 
-<form method="post"  asp-controller="Login" asp-action="Index">
-    <p><input type="text" name="UserName" value="" placeholder="Username or Email" required></p>
+    <div class="form-group">
+        <p class="submit"><input type="submit" name="commit" value="Giriş"></p>
+    </div>
+
+    
+</form>
+
+@*<form method="post"  asp-controller="Login" asp-action="Index">
+    <p><input type="text" name="@Model." value="" placeholder="Username or Email" required></p>
     <p><input type="password" name="Password" value="" placeholder="Password" required></p>
     
     <p class="submit"><input type="submit" name="commit" value="Giriş"></p>
     <hr />
     @ViewBag.Mesaj
-</form>
+</form>*@

@@ -12,12 +12,12 @@ namespace TefMVCApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index( string UserName,string Password)
+        public IActionResult Index(loginVM vm)
         {
             ViewBag.Title = "Hoşgeldiniz GAZİ TEF";
             Authentication cslAuth=new Authentication();
 
-            if (cslAuth.UsernamePasswordControl(UserName, Password))
+            if (cslAuth.UsernamePasswordControl(vm.UserName, vm.Password))
             {
                 ViewBag.Mesaj = "giriş başarılı TEBRİKLER";
                 HttpContext.Session.SetString("UserSession", "1");
