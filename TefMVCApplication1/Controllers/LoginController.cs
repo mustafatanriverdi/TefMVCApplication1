@@ -14,12 +14,12 @@ namespace TefMVCApplication1.Controllers
         [HttpPost]
         public IActionResult Index( string UserName,string Password)
         {
-            ViewBag.Title = "Hoşgeldiniz";
+            ViewBag.Title = "Hoşgeldiniz GAZİ TEF";
             Authentication cslAuth=new Authentication();
 
             if (cslAuth.UsernamePasswordControl(UserName, Password))
             {
-                ViewBag.Mesaj = "giriş başarılı";
+                ViewBag.Mesaj = "giriş başarılı TEBRİKLER";
                 HttpContext.Session.SetString("UserSession", "1");
                 return RedirectToAction("Index","Home");
             }
