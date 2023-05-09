@@ -1,8 +1,11 @@
+using TefMVCApplication1.DBModels;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
+builder.Services.AddDbContext<TefProjectContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
